@@ -1,0 +1,18 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: add-tbl-businesses
+      author: komlan55
+      comments: Add business table
+      changes:
+          - createTable:
+              tableName: tbl_businesses
+              columns:
+                  - column:
+                      name: name
+                      type: varchar(255)
+                      constraints:
+                          nullable: false
+      rollback:
+          - dropTable:
+              tableName: tbl_businesses
